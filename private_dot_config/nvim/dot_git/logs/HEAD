@@ -1,0 +1,7 @@
+0000000000000000000000000000000000000000 c5a67629f12eee295c79956225fed7b4ef3581cd MagentaManifold <17zhaomingyuan@gmail.com> 1725979076 -0400	commit (initial): first commit
+c5a67629f12eee295c79956225fed7b4ef3581cd 0000000000000000000000000000000000000000 MagentaManifold <17zhaomingyuan@gmail.com> 1725979076 -0400	Branch: renamed refs/heads/master to refs/heads/main
+0000000000000000000000000000000000000000 c5a67629f12eee295c79956225fed7b4ef3581cd MagentaManifold <17zhaomingyuan@gmail.com> 1725979076 -0400	Branch: renamed refs/heads/master to refs/heads/main
+c5a67629f12eee295c79956225fed7b4ef3581cd 9bacbb2e21a6855d8fa2086da5480f66e16cc8d1 MagentaManifold <17zhaomingyuan@gmail.com> 1725979920 -0400	commit: first commit
+9bacbb2e21a6855d8fa2086da5480f66e16cc8d1 0000000000000000000000000000000000000000 MagentaManifold <17zhaomingyuan@gmail.com> 1725979920 -0400	Branch: renamed refs/heads/main to refs/heads/main
+9bacbb2e21a6855d8fa2086da5480f66e16cc8d1 9bacbb2e21a6855d8fa2086da5480f66e16cc8d1 MagentaManifold <17zhaomingyuan@gmail.com> 1725979920 -0400	Branch: renamed refs/heads/main to refs/heads/main
+9bacbb2e21a6855d8fa2086da5480f66e16cc8d1 972f4e1fdb84b3121c53653f916b90c5152ff265 MagentaManifold <17zhaomingyuan@gmail.com> 1725980640 -0400	commit: add C-hjkl keybinds in insert mode
