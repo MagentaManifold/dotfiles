@@ -11,6 +11,7 @@ if status is-interactive
     zoxide init fish | source
     # oh-my-posh init fish --config ~/.config/fish/themes/catppuccin_macchiato.omp.json | source
     starship init fish | source
+    alias ls="eza --icons=auto"
 end
 
 # pnpm
@@ -19,3 +20,5 @@ if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
+
+set -gx PATH "/home/mingyuan/.local/share/gem/ruby/3.2.0/bin" $PATH
