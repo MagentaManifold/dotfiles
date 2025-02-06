@@ -12,6 +12,7 @@ if status is-interactive
     # oh-my-posh init fish --config ~/.config/fish/themes/catppuccin_macchiato.omp.json | source
     starship init fish | source
     alias ls="eza --icons=auto"
+    alias l="ls"
 end
 
 # pnpm
@@ -22,3 +23,6 @@ end
 # pnpm end
 
 set -gx PATH "/home/mingyuan/.local/share/gem/ruby/3.2.0/bin" $PATH
+set -gx PATH "$HOME/.cabal/bin:$HOME/.ghcup/bin" $PATH
+
+pyenv init - fish | source
