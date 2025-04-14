@@ -9,5 +9,6 @@ return {
   { import = "astrocommunity.pack.rust" },
   { import = "astrocommunity.pack.java" },
   { import = "astrocommunity.pack.go" },
+  { import = "astrocommunity.recipes.vscode" },
   -- import/override with your plugins folder
 }

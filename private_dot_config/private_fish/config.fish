@@ -24,5 +24,6 @@ end
 
 set -gx PATH "/home/mingyuan/.local/share/gem/ruby/3.2.0/bin" $PATH
 set -gx PATH "$HOME/.cabal/bin:$HOME/.ghcup/bin" $PATH
+set -gx PATH "$HOME/.local/bin/" $PATH
 
 pyenv init - fish | source
