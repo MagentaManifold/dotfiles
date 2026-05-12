@@ -1,8 +1,14 @@
+vim.filetype.add {
+  extension = {
+    curry = "curry",
+    lcurry = "curry", -- literate Curry
+  },
+}
+
 -- AstroLSP allows you to customize the features in AstroNvim's LSP configuration engine
 -- Configuration documentation can be found with `:h astrolsp`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
 --       as this provides autocomplete and documentation while editing
-
 ---@type LazySpec
 return {
   "AstroNvim/astrolsp",
@@ -39,20 +45,35 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
+      "curry_language_server",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
       -- clangd = { capabilities = { offsetEncoding = "utf-8" } },
+      curry_language_server = {
+        cmd = { "curry-language-server" },
+        filetypes = { "curry" },
+        settings = {
+          curry = {
+            importPaths = {
+              "$HOME/Curry2Go/lib",
+            },
+            libraryPaths = {
+              "$HOME/Curry2Go/lib",
+            },
+          },
+        },
+      },
     },
     -- customize how language servers are attached
     handlers = {
-      -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
-      -- function(server, opts) require("lspconfig")[server].setup(opts) end
+      -- a function with key `"*"` is simply the default handler. Neovim configurations should be done via `vim.lsp.config[server]`
+      -- ["*"] = function(server) local opts = vim.lsp.config[server]; vim.lsp.enable(server) end
 
       -- the key is the server that is being setup with `lspconfig`
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
-      -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
+      -- pyright = function(server) local opts = vim.lsp.config.pyright; vim.lsp.enable(server) end -- or a custom handler function can be passed
     },
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
@@ -71,7 +92,11 @@ return {
           -- the rest of the autocmd options (:h nvim_create_autocmd)
           desc = "Refresh codelens (buffer)",
           callback = function(args)
-            if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
+            if require("astrolsp").config.features.codelens then
+              vim.lsp.codelens.refresh {
+                bufnr = args.buf,
+              }
+            end
           end,
         },
       },
